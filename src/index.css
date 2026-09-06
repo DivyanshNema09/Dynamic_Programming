@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #1e293b transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #1e293b;
+    border-radius: 3px;
+  }
+  body {
+    @apply bg-bg text-gray-200 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-bg-card rounded-xl border border-bg-border;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 cursor-pointer select-none;
+  }
+  .btn-primary {
+    @apply btn bg-primary-600 hover:bg-primary-500 text-white shadow-lg shadow-primary-600/20;
+  }
+  .btn-ghost {
+    @apply btn text-gray-400 hover:text-white hover:bg-bg-hover;
+  }
+  .btn-accent {
+    @apply btn bg-accent-500/10 text-accent-400 border border-accent-500/30 hover:bg-accent-500/20;
+  }
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium;
+  }
+  .badge-easy {
+    @apply badge bg-success-500/10 text-success-400 border border-success-500/20;
+  }
+  .badge-medium {
+    @apply badge bg-warning-500/10 text-warning-400 border border-warning-500/20;
+  }
+  .badge-hard {
+    @apply badge bg-error-500/10 text-error-400 border border-error-500/20;
+  }
+  .input-field {
+    @apply w-full bg-bg border border-bg-border rounded-lg px-3 py-2 text-sm text-gray-200 placeholder-gray-600 focus:outline-none focus:border-primary-500 transition-colors;
+  }
+}
